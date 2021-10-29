@@ -2,7 +2,7 @@
   "name": "facilitator2000",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,5 +23,8 @@
     "eslint-plugin-md": "^1.0.19",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.4.1"
+  },
+  "dependencies": {
+    "@slack/bolt": "^3.7.0"
   }
 }
