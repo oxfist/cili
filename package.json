@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +26,7 @@
     "prettier": "^2.4.1"
   },
   "dependencies": {
-    "@slack/bolt": "^3.7.0"
+    "@slack/bolt": "^3.7.0",
+    "dotenv-flow": "^3.2.0"
   }
 }
