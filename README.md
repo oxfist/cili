@@ -10,7 +10,7 @@
 
 2.  **Set environment variables.**
 
-    Add a `.env.local` file with the following varibles and their respective
+    Add a `.env.local` file with the following variables and their respective
     values:
 
     ```shell
