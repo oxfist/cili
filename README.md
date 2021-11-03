@@ -1,6 +1,6 @@
 # Facilitator2000
 
-![Cute robot](./cute_robot.png)
+<img src="./cute_robot.png" alt="Cute robot" width="150px">
 
 ## 🚀 Quick start
 
