@@ -1,5 +1,7 @@
 # Facilitator2000
 
+![Cute robot](./cute_robot.png)
+
 ## 🚀 Quick start
 
 1.  **Install dependencies.**
