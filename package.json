@@ -1,5 +1,5 @@
 {
-  "name": "facilitator2000",
+  "name": "cili",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/oxfist/facilitator2000.git"
+    "url": "git+ssh://git@github.com/oxfist/cili.git"
   },
   "author": "Andrés Quilodrán",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/oxfist/facilitator2000/issues"
+    "url": "https://github.com/oxfist/cili/issues"
   },
-  "homepage": "https://github.com/oxfist/facilitator2000#readme",
+  "homepage": "https://github.com/oxfist/cili#readme",
   "devDependencies": {
     "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
