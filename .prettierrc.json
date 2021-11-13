@@ -1,9 +1,4 @@
 {
   "singleQuote": true,
-  "proseWrap": "always",
-  "overrides": [
-    {
-      "files": ["*.md"]
-    }
-  ]
+  "proseWrap": "always"
 }
