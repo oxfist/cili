@@ -1,5 +1,7 @@
 require('dotenv-flow').config();
+
 const { App } = require('@slack/bolt');
+const { creationRequest, planningCreation } = require('./solver');
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -8,32 +10,12 @@ const app = new App({
   appToken: process.env.SLACK_APP_TOKEN,
 });
 
-app.message('hello', async ({ message, say }) => {
-  await say({
-    blocks: [
-      {
-        type: 'section',
-        text: {
-          type: 'mrkdwn',
-          text: `Hello there, <@${message.user}>!`,
-        },
-        accessory: {
-          type: 'button',
-          text: {
-            type: 'plain_text',
-            text: 'Click Me!',
-          },
-          action_id: 'button_click',
-        },
-      },
-    ],
-    text: `Hello there, <@${message.user}>!`,
-  });
-});
-
-app.action('button_click', async ({ body, ack, say }) => {
-  await ack();
-  await say(`<@${body.user.id}> clicked the button`);
+app.event('app_mention', async ({ event, say }) => {
+  if (creationRequest(event.text)) {
+    planningCreation([], event.text, say);
+  } else {
+    console.log('nope');
+  }
 });
 
 (async () => {
