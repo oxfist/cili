@@ -1,7 +1,7 @@
 require('dotenv-flow').config();
 
 const { App } = require('@slack/bolt');
-const { creationRequest, planningCreation } = require('./solver');
+const { createPlanning, planningCreationRequest } = require('./solver');
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -10,14 +10,19 @@ const app = new App({
   appToken: process.env.SLACK_APP_TOKEN,
 });
 
-app.event('app_mention', async ({ event, say }) => {
-  if (creationRequest(event.text)) {
-    planningCreation([], event.text, say);
-  } else {
-    console.log('nope');
-  }
-});
+const registerEvents = () => {
+  app.event('app_mention', async ({ event, say }) => {
+    if (planningCreationRequest(event.text)) {
+      createPlanning([], event.text, say);
+    } else {
+      console.log('nope');
+    }
+  });
+};
 
+registerEvents();
+
+// Start main process
 (async () => {
   await app.start(process.env.PORT || 3000);
 

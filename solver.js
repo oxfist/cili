@@ -1,25 +1,26 @@
 const CREATION_COMMAND = 'crea planning';
 
-function creationRequest(message) {
+function planningCreationRequest(message) {
   return message.includes(CREATION_COMMAND);
 }
 
-async function planningCreation(people, message, say) {
+async function createPlanning(people, message, say) {
+  const responseText = `Hello there! You just said "${message}"`;
   await say({
     blocks: [
       {
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: `Hello there! You just said "${message}"`,
+          text: responseText,
         },
       },
     ],
-    text: `Hello there, <@${message.user}>!`,
+    text: responseText,
   });
 }
 
 module.exports = {
-  creationRequest,
-  planningCreation,
+  planningCreationRequest,
+  createPlanning,
 };
